@@ -1,0 +1,7 @@
+control.cpp:10:1:control::control(position*)	16	static
+control.cpp:18:1:control::~control()	16	static
+control.cpp:18:1:virtual control::~control()	16	static
+control.cpp:22:6:void control::setKP(float)	16	static
+control.cpp:26:6:void control::setKD(float)	16	static
+control.cpp:30:7:float control::PIDValue()	24	static
+control.cpp:39:5:int control::GetPosition()	16	static

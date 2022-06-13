@@ -1,0 +1,4 @@
+test.cpp:10:1:test::test(TIM_HandleTypeDef*)	16	static
+test.cpp:15:1:test::~test()	16	static
+test.cpp:15:1:virtual test::~test()	16	static
+test.cpp:19:6:void test::PWM(uint8_t)	16	static
