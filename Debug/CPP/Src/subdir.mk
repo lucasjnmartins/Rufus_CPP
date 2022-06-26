@@ -10,6 +10,7 @@ CPP_SRCS += \
 ../CPP/Src/encoder.cpp \
 ../CPP/Src/led.cpp \
 ../CPP/Src/main.cpp \
+../CPP/Src/map.cpp \
 ../CPP/Src/motor.cpp \
 ../CPP/Src/motorControl.cpp \
 ../CPP/Src/position.cpp \
@@ -22,6 +23,7 @@ OBJS += \
 ./CPP/Src/encoder.o \
 ./CPP/Src/led.o \
 ./CPP/Src/main.o \
+./CPP/Src/map.o \
 ./CPP/Src/motor.o \
 ./CPP/Src/motorControl.o \
 ./CPP/Src/position.o \
@@ -34,6 +36,7 @@ CPP_DEPS += \
 ./CPP/Src/encoder.d \
 ./CPP/Src/led.d \
 ./CPP/Src/main.d \
+./CPP/Src/map.d \
 ./CPP/Src/motor.d \
 ./CPP/Src/motorControl.d \
 ./CPP/Src/position.d \

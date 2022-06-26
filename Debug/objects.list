@@ -3,6 +3,7 @@
 "./CPP/Src/encoder.o"
 "./CPP/Src/led.o"
 "./CPP/Src/main.o"
+"./CPP/Src/map.o"
 "./CPP/Src/motor.o"
 "./CPP/Src/motorControl.o"
 "./CPP/Src/position.o"

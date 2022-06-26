@@ -248,7 +248,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000      0x8d8 ./CPP/Src/control.o
  .debug_macro   0x0000000000000000       0x28 ./CPP/Src/control.o
  .debug_macro   0x0000000000000000       0xf1 ./CPP/Src/control.o
- .debug_macro   0x0000000000000000       0xca ./CPP/Src/control.o
+ .debug_macro   0x0000000000000000       0xd0 ./CPP/Src/control.o
  .group         0x0000000000000000        0xc ./CPP/Src/encoder.o
  .group         0x0000000000000000        0xc ./CPP/Src/encoder.o
  .group         0x0000000000000000        0xc ./CPP/Src/encoder.o
@@ -339,7 +339,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000      0x8d8 ./CPP/Src/encoder.o
  .debug_macro   0x0000000000000000       0x28 ./CPP/Src/encoder.o
  .debug_macro   0x0000000000000000       0xf1 ./CPP/Src/encoder.o
- .debug_macro   0x0000000000000000       0xca ./CPP/Src/encoder.o
+ .debug_macro   0x0000000000000000       0xd0 ./CPP/Src/encoder.o
  .group         0x0000000000000000        0xc ./CPP/Src/led.o
  .group         0x0000000000000000        0xc ./CPP/Src/led.o
  .group         0x0000000000000000        0xc ./CPP/Src/led.o
@@ -432,7 +432,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000      0x8d8 ./CPP/Src/led.o
  .debug_macro   0x0000000000000000       0x28 ./CPP/Src/led.o
  .debug_macro   0x0000000000000000       0xf1 ./CPP/Src/led.o
- .debug_macro   0x0000000000000000       0xca ./CPP/Src/led.o
+ .debug_macro   0x0000000000000000       0xd0 ./CPP/Src/led.o
  .group         0x0000000000000000        0xc ./CPP/Src/main.o
  .group         0x0000000000000000        0xc ./CPP/Src/main.o
  .group         0x0000000000000000        0xc ./CPP/Src/main.o
@@ -527,7 +527,114 @@ Discarded input sections
  .debug_macro   0x0000000000000000      0x8d8 ./CPP/Src/main.o
  .debug_macro   0x0000000000000000       0x28 ./CPP/Src/main.o
  .debug_macro   0x0000000000000000       0xf1 ./CPP/Src/main.o
- .debug_macro   0x0000000000000000       0xca ./CPP/Src/main.o
+ .debug_macro   0x0000000000000000       0xd0 ./CPP/Src/main.o
+ .group         0x0000000000000000        0xc ./CPP/Src/map.o
+ .group         0x0000000000000000        0xc ./CPP/Src/map.o
+ .group         0x0000000000000000        0xc ./CPP/Src/map.o
+ .group         0x0000000000000000        0xc ./CPP/Src/map.o
+ .group         0x0000000000000000        0xc ./CPP/Src/map.o
+ .group         0x0000000000000000        0xc ./CPP/Src/map.o
+ .group         0x0000000000000000        0xc ./CPP/Src/map.o
+ .group         0x0000000000000000        0xc ./CPP/Src/map.o
+ .group         0x0000000000000000        0xc ./CPP/Src/map.o
+ .group         0x0000000000000000        0xc ./CPP/Src/map.o
+ .group         0x0000000000000000        0xc ./CPP/Src/map.o
+ .group         0x0000000000000000        0xc ./CPP/Src/map.o
+ .group         0x0000000000000000        0xc ./CPP/Src/map.o
+ .group         0x0000000000000000        0xc ./CPP/Src/map.o
+ .group         0x0000000000000000        0xc ./CPP/Src/map.o
+ .group         0x0000000000000000        0xc ./CPP/Src/map.o
+ .group         0x0000000000000000        0xc ./CPP/Src/map.o
+ .group         0x0000000000000000        0xc ./CPP/Src/map.o
+ .group         0x0000000000000000        0xc ./CPP/Src/map.o
+ .group         0x0000000000000000        0xc ./CPP/Src/map.o
+ .group         0x0000000000000000        0xc ./CPP/Src/map.o
+ .group         0x0000000000000000        0xc ./CPP/Src/map.o
+ .group         0x0000000000000000        0xc ./CPP/Src/map.o
+ .group         0x0000000000000000        0xc ./CPP/Src/map.o
+ .group         0x0000000000000000        0xc ./CPP/Src/map.o
+ .group         0x0000000000000000        0xc ./CPP/Src/map.o
+ .group         0x0000000000000000        0xc ./CPP/Src/map.o
+ .group         0x0000000000000000        0xc ./CPP/Src/map.o
+ .group         0x0000000000000000        0xc ./CPP/Src/map.o
+ .group         0x0000000000000000        0xc ./CPP/Src/map.o
+ .group         0x0000000000000000        0xc ./CPP/Src/map.o
+ .group         0x0000000000000000        0xc ./CPP/Src/map.o
+ .group         0x0000000000000000        0xc ./CPP/Src/map.o
+ .group         0x0000000000000000        0xc ./CPP/Src/map.o
+ .group         0x0000000000000000        0xc ./CPP/Src/map.o
+ .group         0x0000000000000000        0xc ./CPP/Src/map.o
+ .group         0x0000000000000000        0xc ./CPP/Src/map.o
+ .group         0x0000000000000000        0xc ./CPP/Src/map.o
+ .group         0x0000000000000000        0xc ./CPP/Src/map.o
+ .group         0x0000000000000000        0xc ./CPP/Src/map.o
+ .group         0x0000000000000000        0xc ./CPP/Src/map.o
+ .group         0x0000000000000000        0xc ./CPP/Src/map.o
+ .text          0x0000000000000000        0x0 ./CPP/Src/map.o
+ .data          0x0000000000000000        0x0 ./CPP/Src/map.o
+ .bss           0x0000000000000000        0x0 ./CPP/Src/map.o
+ .text._ZN3mapC2Ev
+                0x0000000000000000       0x1c ./CPP/Src/map.o
+ .text._ZN3mapD2Ev
+                0x0000000000000000       0x1c ./CPP/Src/map.o
+ .text._ZN3mapD0Ev
+                0x0000000000000000       0x24 ./CPP/Src/map.o
+ .rodata._ZTV3map
+                0x0000000000000000       0x10 ./CPP/Src/map.o
+ .debug_info    0x0000000000000000      0x311 ./CPP/Src/map.o
+ .debug_abbrev  0x0000000000000000      0x1ee ./CPP/Src/map.o
+ .debug_aranges
+                0x0000000000000000       0x30 ./CPP/Src/map.o
+ .debug_ranges  0x0000000000000000       0x20 ./CPP/Src/map.o
+ .debug_macro   0x0000000000000000      0x1df ./CPP/Src/map.o
+ .debug_macro   0x0000000000000000      0xb56 ./CPP/Src/map.o
+ .debug_macro   0x0000000000000000      0x133 ./CPP/Src/map.o
+ .debug_macro   0x0000000000000000       0x2e ./CPP/Src/map.o
+ .debug_macro   0x0000000000000000       0x22 ./CPP/Src/map.o
+ .debug_macro   0x0000000000000000       0x1c ./CPP/Src/map.o
+ .debug_macro   0x0000000000000000       0x22 ./CPP/Src/map.o
+ .debug_macro   0x0000000000000000       0x8e ./CPP/Src/map.o
+ .debug_macro   0x0000000000000000       0x51 ./CPP/Src/map.o
+ .debug_macro   0x0000000000000000      0x103 ./CPP/Src/map.o
+ .debug_macro   0x0000000000000000       0x6a ./CPP/Src/map.o
+ .debug_macro   0x0000000000000000      0x1df ./CPP/Src/map.o
+ .debug_macro   0x0000000000000000       0x1c ./CPP/Src/map.o
+ .debug_macro   0x0000000000000000       0x22 ./CPP/Src/map.o
+ .debug_macro   0x0000000000000000       0xb5 ./CPP/Src/map.o
+ .debug_macro   0x0000000000000000      0x391 ./CPP/Src/map.o
+ .debug_macro   0x0000000000000000     0x6e67 ./CPP/Src/map.o
+ .debug_macro   0x0000000000000000       0x66 ./CPP/Src/map.o
+ .debug_macro   0x0000000000000000     0x34a6 ./CPP/Src/map.o
+ .debug_macro   0x0000000000000000      0x17b ./CPP/Src/map.o
+ .debug_macro   0x0000000000000000       0x55 ./CPP/Src/map.o
+ .debug_macro   0x0000000000000000      0x924 ./CPP/Src/map.o
+ .debug_macro   0x0000000000000000       0xe5 ./CPP/Src/map.o
+ .debug_macro   0x0000000000000000      0x1af ./CPP/Src/map.o
+ .debug_macro   0x0000000000000000       0xb3 ./CPP/Src/map.o
+ .debug_macro   0x0000000000000000      0x1a0 ./CPP/Src/map.o
+ .debug_macro   0x0000000000000000      0x1ed ./CPP/Src/map.o
+ .debug_macro   0x0000000000000000       0x34 ./CPP/Src/map.o
+ .debug_macro   0x0000000000000000       0x43 ./CPP/Src/map.o
+ .debug_macro   0x0000000000000000       0x28 ./CPP/Src/map.o
+ .debug_macro   0x0000000000000000      0x33d ./CPP/Src/map.o
+ .debug_macro   0x0000000000000000       0xbc ./CPP/Src/map.o
+ .debug_macro   0x0000000000000000       0xb0 ./CPP/Src/map.o
+ .debug_macro   0x0000000000000000      0x15a ./CPP/Src/map.o
+ .debug_macro   0x0000000000000000      0x22c ./CPP/Src/map.o
+ .debug_macro   0x0000000000000000       0x61 ./CPP/Src/map.o
+ .debug_macro   0x0000000000000000       0xa5 ./CPP/Src/map.o
+ .debug_macro   0x0000000000000000       0x4c ./CPP/Src/map.o
+ .debug_macro   0x0000000000000000       0x2b ./CPP/Src/map.o
+ .debug_macro   0x0000000000000000      0x8d8 ./CPP/Src/map.o
+ .debug_macro   0x0000000000000000       0x28 ./CPP/Src/map.o
+ .debug_macro   0x0000000000000000       0xf1 ./CPP/Src/map.o
+ .debug_macro   0x0000000000000000       0xd0 ./CPP/Src/map.o
+ .debug_line    0x0000000000000000      0x754 ./CPP/Src/map.o
+ .debug_str     0x0000000000000000    0x5c5eb ./CPP/Src/map.o
+ .comment       0x0000000000000000       0x54 ./CPP/Src/map.o
+ .debug_frame   0x0000000000000000       0x70 ./CPP/Src/map.o
+ .ARM.attributes
+                0x0000000000000000       0x2c ./CPP/Src/map.o
  .group         0x0000000000000000        0xc ./CPP/Src/motor.o
  .group         0x0000000000000000        0xc ./CPP/Src/motor.o
  .group         0x0000000000000000        0xc ./CPP/Src/motor.o
@@ -622,7 +729,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000      0x8d8 ./CPP/Src/motor.o
  .debug_macro   0x0000000000000000       0x28 ./CPP/Src/motor.o
  .debug_macro   0x0000000000000000       0xf1 ./CPP/Src/motor.o
- .debug_macro   0x0000000000000000       0xca ./CPP/Src/motor.o
+ .debug_macro   0x0000000000000000       0xd0 ./CPP/Src/motor.o
  .group         0x0000000000000000        0xc ./CPP/Src/motorControl.o
  .group         0x0000000000000000        0xc ./CPP/Src/motorControl.o
  .group         0x0000000000000000        0xc ./CPP/Src/motorControl.o
@@ -715,7 +822,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000      0x8d8 ./CPP/Src/motorControl.o
  .debug_macro   0x0000000000000000       0x28 ./CPP/Src/motorControl.o
  .debug_macro   0x0000000000000000       0xf1 ./CPP/Src/motorControl.o
- .debug_macro   0x0000000000000000       0xca ./CPP/Src/motorControl.o
+ .debug_macro   0x0000000000000000       0xd0 ./CPP/Src/motorControl.o
  .group         0x0000000000000000        0xc ./CPP/Src/position.o
  .group         0x0000000000000000        0xc ./CPP/Src/position.o
  .group         0x0000000000000000        0xc ./CPP/Src/position.o
@@ -806,7 +913,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000      0x8d8 ./CPP/Src/position.o
  .debug_macro   0x0000000000000000       0x28 ./CPP/Src/position.o
  .debug_macro   0x0000000000000000       0xf1 ./CPP/Src/position.o
- .debug_macro   0x0000000000000000       0xca ./CPP/Src/position.o
+ .debug_macro   0x0000000000000000       0xd0 ./CPP/Src/position.o
  .group         0x0000000000000000        0xc ./CPP/Src/robot.o
  .group         0x0000000000000000        0xc ./CPP/Src/robot.o
  .group         0x0000000000000000        0xc ./CPP/Src/robot.o
@@ -901,7 +1008,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000      0x8d8 ./CPP/Src/robot.o
  .debug_macro   0x0000000000000000       0x28 ./CPP/Src/robot.o
  .debug_macro   0x0000000000000000       0xf1 ./CPP/Src/robot.o
- .debug_macro   0x0000000000000000       0xca ./CPP/Src/robot.o
+ .debug_macro   0x0000000000000000       0xd0 ./CPP/Src/robot.o
  .group         0x0000000000000000        0xc ./CPP/Src/sensorSide.o
  .group         0x0000000000000000        0xc ./CPP/Src/sensorSide.o
  .group         0x0000000000000000        0xc ./CPP/Src/sensorSide.o
@@ -998,7 +1105,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000      0x8d8 ./CPP/Src/sensorSide.o
  .debug_macro   0x0000000000000000       0x28 ./CPP/Src/sensorSide.o
  .debug_macro   0x0000000000000000       0xf1 ./CPP/Src/sensorSide.o
- .debug_macro   0x0000000000000000       0xca ./CPP/Src/sensorSide.o
+ .debug_macro   0x0000000000000000       0xd0 ./CPP/Src/sensorSide.o
  .group         0x0000000000000000        0xc ./Core/Src/main.o
  .group         0x0000000000000000        0xc ./Core/Src/main.o
  .group         0x0000000000000000        0xc ./Core/Src/main.o
@@ -1080,7 +1187,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000      0x8d8 ./Core/Src/main.o
  .debug_macro   0x0000000000000000       0x28 ./Core/Src/main.o
  .debug_macro   0x0000000000000000       0xf1 ./Core/Src/main.o
- .debug_macro   0x0000000000000000       0xca ./Core/Src/main.o
+ .debug_macro   0x0000000000000000       0xd0 ./Core/Src/main.o
  .group         0x0000000000000000        0xc ./Core/Src/stm32f0xx_hal_msp.o
  .group         0x0000000000000000        0xc ./Core/Src/stm32f0xx_hal_msp.o
  .group         0x0000000000000000        0xc ./Core/Src/stm32f0xx_hal_msp.o
@@ -1169,7 +1276,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000      0x8d8 ./Core/Src/stm32f0xx_hal_msp.o
  .debug_macro   0x0000000000000000       0x28 ./Core/Src/stm32f0xx_hal_msp.o
  .debug_macro   0x0000000000000000       0xf1 ./Core/Src/stm32f0xx_hal_msp.o
- .debug_macro   0x0000000000000000       0xca ./Core/Src/stm32f0xx_hal_msp.o
+ .debug_macro   0x0000000000000000       0xd0 ./Core/Src/stm32f0xx_hal_msp.o
  .group         0x0000000000000000        0xc ./Core/Src/stm32f0xx_it.o
  .group         0x0000000000000000        0xc ./Core/Src/stm32f0xx_it.o
  .group         0x0000000000000000        0xc ./Core/Src/stm32f0xx_it.o
@@ -1254,7 +1361,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000      0x8d8 ./Core/Src/stm32f0xx_it.o
  .debug_macro   0x0000000000000000       0x28 ./Core/Src/stm32f0xx_it.o
  .debug_macro   0x0000000000000000       0xf1 ./Core/Src/stm32f0xx_it.o
- .debug_macro   0x0000000000000000       0xca ./Core/Src/stm32f0xx_it.o
+ .debug_macro   0x0000000000000000       0xd0 ./Core/Src/stm32f0xx_it.o
  .group         0x0000000000000000        0xc ./Core/Src/syscalls.o
  .group         0x0000000000000000        0xc ./Core/Src/syscalls.o
  .group         0x0000000000000000        0xc ./Core/Src/syscalls.o
@@ -3914,6 +4021,7 @@ LOAD ./CPP/Src/control.o
 LOAD ./CPP/Src/encoder.o
 LOAD ./CPP/Src/led.o
 LOAD ./CPP/Src/main.o
+LOAD ./CPP/Src/map.o
 LOAD ./CPP/Src/motor.o
 LOAD ./CPP/Src/motorControl.o
 LOAD ./CPP/Src/position.o
@@ -4899,7 +5007,7 @@ LOAD c:/st/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.exte
  .debug_ranges  0x0000000000000738      0x3c0 ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim.o
  .debug_ranges  0x0000000000000af8      0x158 ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.o
 
-.debug_macro    0x0000000000000000    0x11a87
+.debug_macro    0x0000000000000000    0x11a8d
  .debug_macro   0x0000000000000000      0x1df ./CPP/Src/button.o
  .debug_macro   0x00000000000001df      0xb56 ./CPP/Src/button.o
  .debug_macro   0x0000000000000d35      0x133 ./CPP/Src/button.o
@@ -4942,33 +5050,33 @@ LOAD c:/st/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.exte
  .debug_macro   0x000000000000d72b      0x8d8 ./CPP/Src/button.o
  .debug_macro   0x000000000000e003       0x28 ./CPP/Src/button.o
  .debug_macro   0x000000000000e02b       0xf1 ./CPP/Src/button.o
- .debug_macro   0x000000000000e11c       0xca ./CPP/Src/button.o
- .debug_macro   0x000000000000e1e6      0x1ef ./CPP/Src/control.o
- .debug_macro   0x000000000000e3d5      0x1df ./CPP/Src/encoder.o
- .debug_macro   0x000000000000e5b4      0x1df ./CPP/Src/led.o
- .debug_macro   0x000000000000e793      0x242 ./CPP/Src/main.o
- .debug_macro   0x000000000000e9d5       0x10 ./CPP/Src/main.o
- .debug_macro   0x000000000000e9e5      0x1df ./CPP/Src/motor.o
- .debug_macro   0x000000000000ebc4      0x1f3 ./CPP/Src/motorControl.o
- .debug_macro   0x000000000000edb7      0x1e5 ./CPP/Src/position.o
- .debug_macro   0x000000000000ef9c      0x217 ./CPP/Src/robot.o
- .debug_macro   0x000000000000f1b3      0x1df ./CPP/Src/sensorSide.o
- .debug_macro   0x000000000000f392      0x1d0 ./Core/Src/main.o
- .debug_macro   0x000000000000f562      0xa7e ./Core/Src/main.o
- .debug_macro   0x000000000000ffe0      0x391 ./Core/Src/main.o
- .debug_macro   0x0000000000010371      0x174 ./Core/Src/main.o
- .debug_macro   0x00000000000104e5      0x1d0 ./Core/Src/stm32f0xx_hal_msp.o
- .debug_macro   0x00000000000106b5      0x1da ./Core/Src/stm32f0xx_it.o
- .debug_macro   0x000000000001088f      0x1c1 ./Core/Src/system_stm32f0xx.o
- .debug_macro   0x0000000000010a50      0x1e5 ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.o
- .debug_macro   0x0000000000010c35      0x1e5 ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.o
- .debug_macro   0x0000000000010e1a      0x1cd ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc_ex.o
- .debug_macro   0x0000000000010fe7      0x1c1 ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.o
- .debug_macro   0x00000000000111a8      0x1c1 ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_dma.o
- .debug_macro   0x0000000000011369      0x1c8 ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_gpio.o
- .debug_macro   0x0000000000011531      0x1d3 ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.o
- .debug_macro   0x0000000000011704      0x1c2 ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim.o
- .debug_macro   0x00000000000118c6      0x1c1 ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.o
+ .debug_macro   0x000000000000e11c       0xd0 ./CPP/Src/button.o
+ .debug_macro   0x000000000000e1ec      0x1ef ./CPP/Src/control.o
+ .debug_macro   0x000000000000e3db      0x1df ./CPP/Src/encoder.o
+ .debug_macro   0x000000000000e5ba      0x1df ./CPP/Src/led.o
+ .debug_macro   0x000000000000e799      0x242 ./CPP/Src/main.o
+ .debug_macro   0x000000000000e9db       0x10 ./CPP/Src/main.o
+ .debug_macro   0x000000000000e9eb      0x1df ./CPP/Src/motor.o
+ .debug_macro   0x000000000000ebca      0x1f3 ./CPP/Src/motorControl.o
+ .debug_macro   0x000000000000edbd      0x1e5 ./CPP/Src/position.o
+ .debug_macro   0x000000000000efa2      0x217 ./CPP/Src/robot.o
+ .debug_macro   0x000000000000f1b9      0x1df ./CPP/Src/sensorSide.o
+ .debug_macro   0x000000000000f398      0x1d0 ./Core/Src/main.o
+ .debug_macro   0x000000000000f568      0xa7e ./Core/Src/main.o
+ .debug_macro   0x000000000000ffe6      0x391 ./Core/Src/main.o
+ .debug_macro   0x0000000000010377      0x174 ./Core/Src/main.o
+ .debug_macro   0x00000000000104eb      0x1d0 ./Core/Src/stm32f0xx_hal_msp.o
+ .debug_macro   0x00000000000106bb      0x1da ./Core/Src/stm32f0xx_it.o
+ .debug_macro   0x0000000000010895      0x1c1 ./Core/Src/system_stm32f0xx.o
+ .debug_macro   0x0000000000010a56      0x1e5 ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.o
+ .debug_macro   0x0000000000010c3b      0x1e5 ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.o
+ .debug_macro   0x0000000000010e20      0x1cd ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc_ex.o
+ .debug_macro   0x0000000000010fed      0x1c1 ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.o
+ .debug_macro   0x00000000000111ae      0x1c1 ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_dma.o
+ .debug_macro   0x000000000001136f      0x1c8 ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_gpio.o
+ .debug_macro   0x0000000000011537      0x1d3 ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.o
+ .debug_macro   0x000000000001170a      0x1c2 ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim.o
+ .debug_macro   0x00000000000118cc      0x1c1 ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.o
 
 .debug_line     0x0000000000000000    0x11484
  .debug_line    0x0000000000000000      0x78e ./CPP/Src/button.o
@@ -4996,54 +5104,54 @@ LOAD c:/st/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.exte
  .debug_line    0x000000000000c691     0x3571 ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim.o
  .debug_line    0x000000000000fc02     0x1882 ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.o
 
-.debug_str      0x0000000000000000    0x5ff5d
- .debug_str     0x0000000000000000    0x5c434 ./CPP/Src/button.o
-                                      0x5c6e1 (size before relaxing)
- .debug_str     0x000000000005c434      0x14a ./CPP/Src/control.o
-                                      0x5c6c3 (size before relaxing)
- .debug_str     0x000000000005c57e      0x13e ./CPP/Src/encoder.o
-                                      0x5c748 (size before relaxing)
- .debug_str     0x000000000005c6bc       0xc6 ./CPP/Src/led.o
-                                      0x5c6bb (size before relaxing)
- .debug_str     0x000000000005c782      0x5fc ./CPP/Src/main.o
-                                      0x5ce01 (size before relaxing)
- .debug_str     0x000000000005cd7e      0x161 ./CPP/Src/motor.o
-                                      0x5cd24 (size before relaxing)
- .debug_str     0x000000000005cedf      0x166 ./CPP/Src/motorControl.o
-                                      0x5c71a (size before relaxing)
- .debug_str     0x000000000005d045      0x197 ./CPP/Src/position.o
-                                      0x5c720 (size before relaxing)
- .debug_str     0x000000000005d1dc      0x189 ./CPP/Src/robot.o
-                                      0x5c77b (size before relaxing)
- .debug_str     0x000000000005d365      0x180 ./CPP/Src/sensorSide.o
-                                      0x5c79c (size before relaxing)
- .debug_str     0x000000000005d4e5      0x845 ./Core/Src/main.o
-                                      0x5cd40 (size before relaxing)
- .debug_str     0x000000000005dd2a       0x98 ./Core/Src/stm32f0xx_hal_msp.o
-                                      0x5c9e6 (size before relaxing)
- .debug_str     0x000000000005ddc2       0xbc ./Core/Src/stm32f0xx_it.o
-                                      0x5c806 (size before relaxing)
- .debug_str     0x000000000005de7e       0x5f ./Core/Src/system_stm32f0xx.o
+.debug_str      0x0000000000000000    0x5ff67
+ .debug_str     0x0000000000000000    0x5c43e ./CPP/Src/button.o
+                                      0x5c6eb (size before relaxing)
+ .debug_str     0x000000000005c43e      0x14a ./CPP/Src/control.o
+                                      0x5c6cd (size before relaxing)
+ .debug_str     0x000000000005c588      0x13e ./CPP/Src/encoder.o
+                                      0x5c752 (size before relaxing)
+ .debug_str     0x000000000005c6c6       0xc6 ./CPP/Src/led.o
+                                      0x5c6c5 (size before relaxing)
+ .debug_str     0x000000000005c78c      0x5fc ./CPP/Src/main.o
+                                      0x5ce0b (size before relaxing)
+ .debug_str     0x000000000005cd88      0x161 ./CPP/Src/motor.o
+                                      0x5cd2e (size before relaxing)
+ .debug_str     0x000000000005cee9      0x166 ./CPP/Src/motorControl.o
+                                      0x5c724 (size before relaxing)
+ .debug_str     0x000000000005d04f      0x197 ./CPP/Src/position.o
+                                      0x5c72a (size before relaxing)
+ .debug_str     0x000000000005d1e6      0x189 ./CPP/Src/robot.o
+                                      0x5c785 (size before relaxing)
+ .debug_str     0x000000000005d36f      0x180 ./CPP/Src/sensorSide.o
+                                      0x5c7a6 (size before relaxing)
+ .debug_str     0x000000000005d4ef      0x845 ./Core/Src/main.o
+                                      0x5cd4a (size before relaxing)
+ .debug_str     0x000000000005dd34       0x98 ./Core/Src/stm32f0xx_hal_msp.o
+                                      0x5c9f0 (size before relaxing)
+ .debug_str     0x000000000005ddcc       0xbc ./Core/Src/stm32f0xx_it.o
+                                      0x5c810 (size before relaxing)
+ .debug_str     0x000000000005de88       0x5f ./Core/Src/system_stm32f0xx.o
                                       0x5be66 (size before relaxing)
- .debug_str     0x000000000005dedd       0x36 ./Core/Startup/startup_stm32f030c6tx.o
+ .debug_str     0x000000000005dee7       0x36 ./Core/Startup/startup_stm32f030c6tx.o
                                          0x84 (size before relaxing)
- .debug_str     0x000000000005df13      0x317 ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.o
+ .debug_str     0x000000000005df1d      0x317 ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.o
                                       0x5c33d (size before relaxing)
- .debug_str     0x000000000005e22a      0x36e ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.o
+ .debug_str     0x000000000005e234      0x36e ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.o
                                       0x5c566 (size before relaxing)
- .debug_str     0x000000000005e598       0xa8 ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc_ex.o
+ .debug_str     0x000000000005e5a2       0xa8 ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc_ex.o
                                       0x5c21f (size before relaxing)
- .debug_str     0x000000000005e640      0x1d3 ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.o
+ .debug_str     0x000000000005e64a      0x1d3 ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.o
                                       0x5c1f1 (size before relaxing)
- .debug_str     0x000000000005e813      0x24d ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_dma.o
+ .debug_str     0x000000000005e81d      0x24d ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_dma.o
                                       0x5c23e (size before relaxing)
- .debug_str     0x000000000005ea60      0x114 ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_gpio.o
+ .debug_str     0x000000000005ea6a      0x114 ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_gpio.o
                                       0x5c045 (size before relaxing)
- .debug_str     0x000000000005eb74      0x235 ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.o
+ .debug_str     0x000000000005eb7e      0x235 ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.o
                                       0x5c270 (size before relaxing)
- .debug_str     0x000000000005eda9      0xd5a ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim.o
+ .debug_str     0x000000000005edb3      0xd5a ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim.o
                                       0x5d221 (size before relaxing)
- .debug_str     0x000000000005fb03      0x45a ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.o
+ .debug_str     0x000000000005fb0d      0x45a ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.o
                                       0x5c9d2 (size before relaxing)
 
 .comment        0x0000000000000000       0x53
