@@ -1,7 +1,5 @@
-CPP/Src/robot.o: ../CPP/Src/robot.cpp \
- C:/Users/Lucas\ Martins/STM32CubeIDE/workspace_1.7.0/Rufus_CPP/Rufus_CPP/CPP/Inc/robot.h \
- C:/Users/Lucas\ Martins/STM32CubeIDE/workspace_1.7.0/Rufus_CPP/Rufus_CPP/CPP/Inc/control.h \
- C:/Users/Lucas\ Martins/STM32CubeIDE/workspace_1.7.0/Rufus_CPP/Rufus_CPP/CPP/Inc/position.h \
+CPP/Src/encoder.o: ../CPP/Src/encoder.cpp \
+ C:/Users/Lucas\ Martins/STM32CubeIDE/workspace_1.7.0/Rufus_CPP/Rufus_CPP/CPP/Inc/encoder.h \
  ../Core/Inc/main.h ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h \
  ../Core/Inc/stm32f0xx_hal_conf.h \
  ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h \
@@ -30,16 +28,9 @@ CPP/Src/robot.o: ../CPP/Src/robot.cpp \
  ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr.h \
  ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr_ex.h \
  ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_tim.h \
- ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_tim_ex.h \
- C:/Users/Lucas\ Martins/STM32CubeIDE/workspace_1.7.0/Rufus_CPP/Rufus_CPP/CPP/Inc/motorControl.h \
- C:/Users/Lucas\ Martins/STM32CubeIDE/workspace_1.7.0/Rufus_CPP/Rufus_CPP/CPP/Inc/motor.h \
- C:/Users/Lucas\ Martins/STM32CubeIDE/workspace_1.7.0/Rufus_CPP/Rufus_CPP/CPP/Inc/encoder.h
+ ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_tim_ex.h
 
-C:/Users/Lucas\ Martins/STM32CubeIDE/workspace_1.7.0/Rufus_CPP/Rufus_CPP/CPP/Inc/robot.h:
-
-C:/Users/Lucas\ Martins/STM32CubeIDE/workspace_1.7.0/Rufus_CPP/Rufus_CPP/CPP/Inc/control.h:
-
-C:/Users/Lucas\ Martins/STM32CubeIDE/workspace_1.7.0/Rufus_CPP/Rufus_CPP/CPP/Inc/position.h:
+C:/Users/Lucas\ Martins/STM32CubeIDE/workspace_1.7.0/Rufus_CPP/Rufus_CPP/CPP/Inc/encoder.h:
 
 ../Core/Inc/main.h:
 
@@ -100,9 +91,3 @@ C:/Users/Lucas\ Martins/STM32CubeIDE/workspace_1.7.0/Rufus_CPP/Rufus_CPP/CPP/Inc
 ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_tim.h:
 
 ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_tim_ex.h:
-
-C:/Users/Lucas\ Martins/STM32CubeIDE/workspace_1.7.0/Rufus_CPP/Rufus_CPP/CPP/Inc/motorControl.h:
-
-C:/Users/Lucas\ Martins/STM32CubeIDE/workspace_1.7.0/Rufus_CPP/Rufus_CPP/CPP/Inc/motor.h:
-
-C:/Users/Lucas\ Martins/STM32CubeIDE/workspace_1.7.0/Rufus_CPP/Rufus_CPP/CPP/Inc/encoder.h:

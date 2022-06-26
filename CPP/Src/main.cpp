@@ -9,27 +9,46 @@
 #include "led.h"
 #include "button.h"
 #include "motor.h"
-#include "test.h"
 #include "motorControl.h"
 #include "control.h"
 #include "robot.h"
+#include "encoder.h"
+#include "sensorSide.h"
 #include "main.h"
 extern TIM_HandleTypeDef htim16;
 extern TIM_HandleTypeDef htim17;
 
+enum {
+	WAITING,
+	CALIBRATION,
+	PRE_RUN,
+	RUNNING
+};
+
 position p;
+sensorSide marcEsq(MARC_ESQ_GPIO_Port, MARC_ESQ_Pin);
+sensorSide marcDir(MARC_DIR_GPIO_Port, MARC_DIR_Pin);
+
 led lfdir(L_FDIR_GPIO_Port, L_FDIR_Pin);
 led lfesq(L_FESQ_GPIO_Port, L_FESQ_Pin);
 led lfren(L_FREN_GPIO_Port, L_FREN_Pin);
+led ldeb1(L_DEBUG1_GPIO_Port, L_DEBUG1_Pin);
+led ldeb2(L_DEBUG2_GPIO_Port, L_DEBUG2_Pin);
+
 button b(BUTTON_GPIO_Port, BUTTON_Pin);
-int z = 0, pos, k=0;
+encoder enc1(ENC1_GPIO_Port, ENC1_Pin);
+encoder enc2(ENC2_GPIO_Port, ENC2_Pin);
+
+int pos, k = 0, cont1, cont2;
+uint32_t z = 0;
 uint8_t debounce = 0, state = 0;
 //test teste(&htim14);
-motor m1(&htim17, 1, AIN1_GPIO_Port, AIN1_Pin, AIN2_GPIO_Port, AIN2_Pin);
-motor m2(&htim16, 1, BIN1_GPIO_Port, BIN1_Pin, BIN2_GPIO_Port, BIN2_Pin);
 
-motorControl mdir(&m1);
-motorControl mesq(&m2);
+motor m1(&htim17, 1, AIN2_GPIO_Port, AIN2_Pin, AIN1_GPIO_Port, AIN1_Pin);
+motor m2(&htim16, 1, BIN2_GPIO_Port, BIN2_Pin, BIN1_GPIO_Port, BIN1_Pin);
+
+motorControl mdir(&m1, &enc1);
+motorControl mesq(&m2, &enc2);
 
 control controle(&p);
 robot rufus(&controle, &mdir, &mesq);
@@ -40,12 +59,20 @@ void CppMain() {
 	lfdir.Off();
 	lfesq.Off();
 	lfren.Off();
-	p.InitCalibration();
-	rufus.Calibrate(&z);
 
 	while(1) {
 		rufus.RunningState(state);
-		if (state == 1) {
+		if (state == WAITING){
+			lfdir.Off();
+			lfesq.Off();
+			lfren.Off();
+		} else if (state == CALIBRATION) {
+			rufus.Calibrate(&z);
+			lfdir.On();
+			lfesq.On();
+			lfren.On();
+			state = 2;
+		} else if (state == RUNNING) {
 			pos = p.DefinePosition();
 			if((pos < -3) && (pos >= -5)) {
 				lfdir.On();
@@ -68,10 +95,6 @@ void CppMain() {
 				lfesq.On();
 				lfren.Off();
 			}
-		} else {
-			lfdir.On();
-			lfesq.On();
-			lfren.On();
 		}
 
 	}
@@ -85,19 +108,35 @@ void ADC_Interrupt(uint8_t* Array, int size) {
 
 
 void TIM1_Interrupt() {
-	if(z != -1) {
+	if(z != 60000) {
 		z++;
-		if(z >= 200) {
+		if(z >= 50000) {
 			z = 0;
 		}
 	}
-
 	if(debounce > 0) {
 		debounce--;
+	}
+
+	if((state == RUNNING) || (state == CALIBRATION)) {
+		enc1.Cont();
+		enc2.Cont();
 	}
 }
 
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
+	if (GPIO_Pin == enc1.GetPin()) {
+		if((state == RUNNING) || (state == CALIBRATION)) {
+			enc1.SetRps();
+		}
+	}
+
+	if (GPIO_Pin == enc2.GetPin()) {
+		if((state == RUNNING) || (state == CALIBRATION)) {
+			enc2.SetRps();
+		}
+	}
+
 	if (GPIO_Pin == b.GetPin()) {
 		if(debounce == 0) {
 			debounce = 5;
@@ -106,6 +145,12 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
 				state = 1;
 				break;
 			case 1:
+				state = 2;
+				break;
+			case 2:
+				state = 3;
+				break;
+			case 3:
 				state = 0;
 				break;
 			default:

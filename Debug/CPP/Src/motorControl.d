@@ -29,7 +29,8 @@ CPP/Src/motorControl.o: ../CPP/Src/motorControl.cpp \
  ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr_ex.h \
  ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_tim.h \
  ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_tim_ex.h \
- C:/Users/Lucas\ Martins/STM32CubeIDE/workspace_1.7.0/Rufus_CPP/Rufus_CPP/CPP/Inc/motor.h
+ C:/Users/Lucas\ Martins/STM32CubeIDE/workspace_1.7.0/Rufus_CPP/Rufus_CPP/CPP/Inc/motor.h \
+ C:/Users/Lucas\ Martins/STM32CubeIDE/workspace_1.7.0/Rufus_CPP/Rufus_CPP/CPP/Inc/encoder.h
 
 C:/Users/Lucas\ Martins/STM32CubeIDE/workspace_1.7.0/Rufus_CPP/Rufus_CPP/CPP/Inc/motorControl.h:
 
@@ -94,3 +95,5 @@ C:/Users/Lucas\ Martins/STM32CubeIDE/workspace_1.7.0/Rufus_CPP/Rufus_CPP/CPP/Inc
 ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_tim_ex.h:
 
 C:/Users/Lucas\ Martins/STM32CubeIDE/workspace_1.7.0/Rufus_CPP/Rufus_CPP/CPP/Inc/motor.h:
+
+C:/Users/Lucas\ Martins/STM32CubeIDE/workspace_1.7.0/Rufus_CPP/Rufus_CPP/CPP/Inc/encoder.h:

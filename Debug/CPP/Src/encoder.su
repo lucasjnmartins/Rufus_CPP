@@ -1,0 +1,8 @@
+encoder.cpp:10:1:encoder::encoder(GPIO_TypeDef*, uint16_t)	24	static
+encoder.cpp:19:1:encoder::~encoder()	16	static
+encoder.cpp:19:1:virtual encoder::~encoder()	16	static
+encoder.cpp:23:10:uint16_t encoder::GetPin()	16	static
+encoder.cpp:27:15:GPIO_PinState encoder::State()	16	static
+encoder.cpp:31:5:int encoder::GetRps()	16	static
+encoder.cpp:35:6:void encoder::SetRps()	16	static
+encoder.cpp:45:6:void encoder::Cont()	16	static

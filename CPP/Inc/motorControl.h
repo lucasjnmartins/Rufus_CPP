@@ -10,15 +10,20 @@
 
 #include "main.h"
 #include "motor.h"
+#include "encoder.h"
 
 class motorControl {
 public:
-	motorControl(motor*);
+	motorControl(motor*, encoder*);
 	virtual ~motorControl();
 	void Break();
 	void Speed(int);
+	void InitConsts(float, float);
 private:
 	motor* m;
+	encoder* e;
+	float kp, kd, pid;
+	int error, errorDer, olderror, sinal;
 	int der;
 };
 

@@ -65,15 +65,14 @@ static void MX_TIM17_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-uint8_t adcArray[BUFFER];
+uint8_t adcArray[BUFFER], check;
 void HAL_ADC_ConvCpltCallback (ADC_HandleTypeDef * hadc) {
 	ADC_Interrupt(adcArray, BUFFER);
 }
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
   // Check which version of the timer triggered this callback and toggle LED
-  if (htim == &htim1 )
-  {
+  if (htim == &htim1) {
 	  TIM1_Interrupt();
   }
 }
@@ -124,7 +123,7 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-	  CppMain();
+
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
@@ -273,9 +272,9 @@ static void MX_TIM1_Init(void)
 
   /* USER CODE END TIM1_Init 1 */
   htim1.Instance = TIM1;
-  htim1.Init.Prescaler = 18000;
+  htim1.Init.Prescaler = 479;
   htim1.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim1.Init.Period = 255;
+  htim1.Init.Period = 14;
   htim1.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim1.Init.RepetitionCounter = 0;
   htim1.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
@@ -459,7 +458,7 @@ static void MX_GPIO_Init(void)
   HAL_GPIO_WritePin(GPIOC, AIN1_Pin|AIN2_Pin|BIN1_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(BIN2_GPIO_Port, BIN2_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOF, BIN2_Pin|L_DEBUG2_Pin|L_DEBUG1_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOB, L_FESQ_Pin|L_FREN_Pin|L_FDIR_Pin, GPIO_PIN_RESET);
@@ -471,12 +470,18 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 
-  /*Configure GPIO pin : BIN2_Pin */
-  GPIO_InitStruct.Pin = BIN2_Pin;
+  /*Configure GPIO pins : BIN2_Pin L_DEBUG2_Pin L_DEBUG1_Pin */
+  GPIO_InitStruct.Pin = BIN2_Pin|L_DEBUG2_Pin|L_DEBUG1_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(BIN2_GPIO_Port, &GPIO_InitStruct);
+  HAL_GPIO_Init(GPIOF, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : MARC_DIR_Pin */
+  GPIO_InitStruct.Pin = MARC_DIR_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(MARC_DIR_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pins : L_FESQ_Pin L_FREN_Pin L_FDIR_Pin */
   GPIO_InitStruct.Pin = L_FESQ_Pin|L_FREN_Pin|L_FDIR_Pin;
@@ -485,11 +490,17 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
-  /*Configure GPIO pin : BUTTON_Pin */
-  GPIO_InitStruct.Pin = BUTTON_Pin;
+  /*Configure GPIO pins : MARC_ESQ_Pin BUTTON_Pin ENC2_Pin */
+  GPIO_InitStruct.Pin = MARC_ESQ_Pin|BUTTON_Pin|ENC2_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
-  HAL_GPIO_Init(BUTTON_GPIO_Port, &GPIO_InitStruct);
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : ENC1_Pin */
+  GPIO_InitStruct.Pin = ENC1_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(ENC1_GPIO_Port, &GPIO_InitStruct);
 
   /* EXTI interrupt init*/
   HAL_NVIC_SetPriority(EXTI4_15_IRQn, 0, 0);

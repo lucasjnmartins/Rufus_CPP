@@ -7,35 +7,38 @@
 CPP_SRCS += \
 ../CPP/Src/button.cpp \
 ../CPP/Src/control.cpp \
+../CPP/Src/encoder.cpp \
 ../CPP/Src/led.cpp \
 ../CPP/Src/main.cpp \
 ../CPP/Src/motor.cpp \
 ../CPP/Src/motorControl.cpp \
 ../CPP/Src/position.cpp \
 ../CPP/Src/robot.cpp \
-../CPP/Src/test.cpp 
+../CPP/Src/sensorSide.cpp 
 
 OBJS += \
 ./CPP/Src/button.o \
 ./CPP/Src/control.o \
+./CPP/Src/encoder.o \
 ./CPP/Src/led.o \
 ./CPP/Src/main.o \
 ./CPP/Src/motor.o \
 ./CPP/Src/motorControl.o \
 ./CPP/Src/position.o \
 ./CPP/Src/robot.o \
-./CPP/Src/test.o 
+./CPP/Src/sensorSide.o 
 
 CPP_DEPS += \
 ./CPP/Src/button.d \
 ./CPP/Src/control.d \
+./CPP/Src/encoder.d \
 ./CPP/Src/led.d \
 ./CPP/Src/main.d \
 ./CPP/Src/motor.d \
 ./CPP/Src/motorControl.d \
 ./CPP/Src/position.d \
 ./CPP/Src/robot.d \
-./CPP/Src/test.d 
+./CPP/Src/sensorSide.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes

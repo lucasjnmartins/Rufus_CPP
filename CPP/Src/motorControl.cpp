@@ -7,16 +7,17 @@
 
 #include <motorControl.h>
 
-motorControl::motorControl(motor* M) {
+motorControl::motorControl(motor* M, encoder* E) {
 	// TODO Auto-generated constructor stub
 	m = M;
+	e = E;
 }
 
 motorControl::~motorControl() {
 	// TODO Auto-generated destructor stub
 }
 
-void motorControl::Speed(int speed) {
+/*void motorControl::Speed(int speed) {
 	if(speed >= 0) {
 		m->CW();
 		speed = speed;
@@ -25,6 +26,28 @@ void motorControl::Speed(int speed) {
 		speed = -speed;
 	}
 	m->PWM(speed);
+}*/
+
+void motorControl::InitConsts(float KP, float KD) {
+	kp = KP;
+	kd = KD;
+}
+
+void motorControl::Speed(int speed)  {
+	if(speed >= 0) {
+		m->CW();
+	} else {
+		m->CCW();
+		speed = -speed;
+	}
+
+	olderror = error;
+	error = speed - (e->GetRps() / 6.0262783);
+	errorDer = error - olderror;
+
+	pid = kp*error + kd*errorDer;
+	sinal+=(pid);
+	m->PWM(sinal);
 }
 
 void motorControl::Break() {

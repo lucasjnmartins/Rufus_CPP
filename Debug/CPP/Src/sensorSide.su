@@ -1,0 +1,8 @@
+sensorSide.cpp:10:1:sensorSide::sensorSide(GPIO_TypeDef*, uint16_t)	24	static
+sensorSide.cpp:17:1:sensorSide::~sensorSide()	16	static
+sensorSide.cpp:17:1:virtual sensorSide::~sensorSide()	16	static
+sensorSide.cpp:21:6:void sensorSide::InitTrack()	16	static
+sensorSide.cpp:25:6:void sensorSide::NextTrack()	16	static
+sensorSide.cpp:29:9:uint8_t sensorSide::CurrentTrack()	16	static
+sensorSide.cpp:33:10:uint16_t sensorSide::GetPin()	16	static
+sensorSide.cpp:37:15:GPIO_PinState sensorSide::State()	16	static

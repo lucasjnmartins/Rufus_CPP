@@ -72,15 +72,30 @@ void TIM1_Interrupt();
 #define BIN1_GPIO_Port GPIOC
 #define BIN2_Pin GPIO_PIN_0
 #define BIN2_GPIO_Port GPIOF
+#define MARC_DIR_Pin GPIO_PIN_1
+#define MARC_DIR_GPIO_Port GPIOF
 #define L_FESQ_Pin GPIO_PIN_0
 #define L_FESQ_GPIO_Port GPIOB
 #define L_FREN_Pin GPIO_PIN_1
 #define L_FREN_GPIO_Port GPIOB
 #define L_FDIR_Pin GPIO_PIN_2
 #define L_FDIR_GPIO_Port GPIOB
+#define MARC_ESQ_Pin GPIO_PIN_8
+#define MARC_ESQ_GPIO_Port GPIOA
+#define MARC_ESQ_EXTI_IRQn EXTI4_15_IRQn
 #define BUTTON_Pin GPIO_PIN_11
 #define BUTTON_GPIO_Port GPIOA
 #define BUTTON_EXTI_IRQn EXTI4_15_IRQn
+#define ENC2_Pin GPIO_PIN_12
+#define ENC2_GPIO_Port GPIOA
+#define ENC2_EXTI_IRQn EXTI4_15_IRQn
+#define L_DEBUG2_Pin GPIO_PIN_6
+#define L_DEBUG2_GPIO_Port GPIOF
+#define L_DEBUG1_Pin GPIO_PIN_7
+#define L_DEBUG1_GPIO_Port GPIOF
+#define ENC1_Pin GPIO_PIN_7
+#define ENC1_GPIO_Port GPIOB
+#define ENC1_EXTI_IRQn EXTI4_15_IRQn
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */

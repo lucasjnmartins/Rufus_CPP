@@ -20,7 +20,7 @@ public:
 	float module(float);
 	void RunningState(uint8_t);
 	int GetPosition();
-	void Calibrate(int*);
+	void Calibrate(uint32_t*);
 
 private:
 	control* ctr;
