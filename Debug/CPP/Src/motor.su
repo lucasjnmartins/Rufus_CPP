@@ -1,0 +1,7 @@
+motor.cpp:10:1:motor::motor(TIM_HandleTypeDef*, uint8_t, GPIO_TypeDef*, uint16_t, GPIO_TypeDef*, uint16_t)	24	static
+motor.cpp:20:1:motor::~motor()	16	static
+motor.cpp:20:1:virtual motor::~motor()	16	static
+motor.cpp:26:6:void motor::PWM(uint8_t)	16	static
+motor.cpp:44:6:void motor::CW()	16	static
+motor.cpp:49:6:void motor::CCW()	16	static
+motor.cpp:54:6:void motor::MotorBreak()	16	static

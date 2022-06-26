@@ -1,0 +1,7 @@
+robot.cpp:10:1:robot::robot(control*, motorControl*, motorControl*)	24	static
+robot.cpp:17:1:robot::~robot()	16	static
+robot.cpp:17:1:virtual robot::~robot()	16	static
+robot.cpp:21:7:float robot::module(float)	16	static
+robot.cpp:29:6:void robot::RunningState(uint8_t)	24	static
+robot.cpp:54:6:void robot::Calibrate(uint32_t*)	16	static
+robot.cpp:82:5:int robot::GetPosition()	16	static

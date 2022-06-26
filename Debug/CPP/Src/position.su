@@ -1,0 +1,8 @@
+position.cpp:10:1:position::position()	16	static
+position.cpp:15:1:position::~position()	16	static
+position.cpp:15:1:virtual position::~position()	16	static
+position.cpp:19:6:void position::SetAnalog(uint8_t*, int)	40	static
+position.cpp:31:6:void position::InitCalibration()	24	static
+position.cpp:39:6:void position::CalibrateSensors()	24	static
+position.cpp:51:6:void position::SetSensors()	24	static
+position.cpp:61:5:int position::DefinePosition()	16	static
