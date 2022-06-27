@@ -39,9 +39,9 @@ button b(BUTTON_GPIO_Port, BUTTON_Pin);
 encoder enc1(ENC1_GPIO_Port, ENC1_Pin);
 encoder enc2(ENC2_GPIO_Port, ENC2_Pin);
 
-int pos, k = 0, cont1, cont2;
+int pos, k = 0, cont1, cont2, dirteste;
 uint32_t z = 0;
-uint8_t debounce = 0, state = 0;
+uint16_t debounce = 0, state = 0;
 //test teste(&htim14);
 
 motor m1(&htim17, 1, AIN2_GPIO_Port, AIN2_Pin, AIN1_GPIO_Port, AIN1_Pin);
@@ -51,7 +51,9 @@ motorControl mdir(&m1, &enc1);
 motorControl mesq(&m2, &enc2);
 
 control controle(&p);
-robot rufus(&controle, &mdir, &mesq);
+map circuit;
+
+robot rufus(&controle, &mdir, &mesq, &circuit);
 float pidValue, vel1, vel2;
 
 
@@ -61,6 +63,7 @@ void CppMain() {
 	lfren.Off();
 
 	while(1) {
+		//dirteste = HAL_GPIO_ReadPin(MARC_DIR_GPIO_Port, MARC_DIR_Pin);
 		rufus.RunningState(state);
 		if (state == WAITING){
 			lfdir.Off();
@@ -71,7 +74,7 @@ void CppMain() {
 			lfdir.On();
 			lfesq.On();
 			lfren.On();
-			state = 2;
+			state = PRE_RUN;
 		} else if (state == RUNNING) {
 			pos = p.DefinePosition();
 			if((pos < -3) && (pos >= -5)) {
@@ -128,18 +131,20 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
 	if (GPIO_Pin == enc1.GetPin()) {
 		if((state == RUNNING) || (state == CALIBRATION)) {
 			enc1.SetRps();
+			enc1.RotationCont(mdir.GetSpeed());
 		}
 	}
 
 	if (GPIO_Pin == enc2.GetPin()) {
 		if((state == RUNNING) || (state == CALIBRATION)) {
 			enc2.SetRps();
+			enc2.RotationCont(mesq.GetSpeed());
 		}
 	}
 
 	if (GPIO_Pin == b.GetPin()) {
 		if(debounce == 0) {
-			debounce = 5;
+			debounce = 2000;
 			switch(state) {
 			case 0:
 				state = 1;
@@ -148,6 +153,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
 				state = 2;
 				break;
 			case 2:
+				rufus.ChangeTrack();
 				state = 3;
 				break;
 			case 3:
@@ -155,6 +161,26 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
 				break;
 			default:
 				break;
+			}
+		}
+	}
+
+	if (GPIO_Pin == marcEsq.GetPin()) {
+		if(state == RUNNING) {
+			rufus.NextState();
+			marcEsq.NextTrack();
+			enc1.RestartRotation();
+			enc2.RestartRotation();
+		}
+	}
+
+	if (GPIO_Pin == marcDir.GetPin()) {
+		if(state == RUNNING) {
+			marcDir.NextTrack();
+			if(marcDir.CurrentTrack() == 4) {
+				mdir.Break();
+				mesq.Break();
+				state = WAITING;
 			}
 		}
 	}

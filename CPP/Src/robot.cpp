@@ -7,11 +7,12 @@
 
 #include "robot.h"
 
-robot::robot(control* CTR, motorControl* MDIR, motorControl* MESQ) {
+robot::robot(control* CTR, motorControl* MDIR, motorControl* MESQ, map* CIRCUIT) {
 	// TODO Auto-generated constructor stub
 	ctr = CTR;
 	mdir = MDIR;
 	mesq = MESQ;
+	circuit = CIRCUIT;
 }
 
 robot::~robot() {
@@ -28,15 +29,19 @@ float robot::module(float val) {
 
 void robot::RunningState(uint8_t state) {
 	if(state == 0) {
-
+		mdir->Break();
+		mesq->Break();
 	} if(state == 1) {
-		velMax = 120;
-		velBase = 70;
-		ctr->setKP(15);
-		ctr->setKD(10);
-		mdir->InitConsts(1040.93, 21.714);
-		mesq->InitConsts(1040.93, 21.714);
+		velMax = 150;
+		circuit->InitTracks();
+		/*mdir->InitConsts(1040.93, 21.714);
+		mesq->InitConsts(1040.93, 21.714);*/
 	} else if (state == 3) {
+
+		if(pos == TRACKS) {
+			pos = 0;
+		}
+
 		velDir = velBase + ctr->PIDValue();;
 		velEsq = velBase - ctr->PIDValue();;
 		if(velDir > velMax) {
@@ -47,29 +52,30 @@ void robot::RunningState(uint8_t state) {
 		}
 		mdir->Speed(velDir);
 		mesq->Speed(velEsq);
-	}
 
+
+	}
 }
 
 void robot::Calibrate(uint32_t* z) {
 	ctr->p->InitCalibration();
 	*z = 0;
-	while(*z < 10000) {
-		mdir->Speed(60);
+	while(*z < 5000) {
+		mdir->Speed(75);
 		mesq->Speed(0);
 		ctr->p->CalibrateSensors();
 	}
 	mdir->Break();
 	mesq->Break();
-	while(*z < 30000) {
-		mdir->Speed(-60);
+	while(*z < 13000) {
+		mdir->Speed(-75);
 		mesq->Speed(0);
 		ctr->p->CalibrateSensors();
 	}
 	mdir->Break();
 	mesq->Break();
-	while(*z < 40000) {
-		mdir->Speed(60);
+	while(*z < 18000) {
+		mdir->Speed(75);
 		mesq->Speed(0);
 		ctr->p->CalibrateSensors();
 	}
@@ -77,8 +83,24 @@ void robot::Calibrate(uint32_t* z) {
 	*z = 60000;
 	mdir->Break();
 	mesq->Break();
+	pos = 0;
 }
 
 int robot::GetPosition() {
 	return ctr->GetPosition();
+}
+
+void robot::NextState() {
+	ChangeTrack();
+	pos++;
+}
+
+void robot::ChangeTrack() {
+	if(pos != 0) {
+		circuit->SetTrackRotations(pos-1, mdir->GetRotations(), mesq->GetRotations());
+	}
+	velBase = circuit->GetBaseSpeed(pos);
+	ctr->setKP(circuit->GetKp(pos));
+	ctr->setKD(circuit->GetKd(pos));
+
 }

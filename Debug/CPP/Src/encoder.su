@@ -6,3 +6,6 @@ encoder.cpp:27:15:GPIO_PinState encoder::State()	16	static
 encoder.cpp:31:5:int encoder::GetRps()	16	static
 encoder.cpp:35:6:void encoder::SetRps()	16	static
 encoder.cpp:45:6:void encoder::Cont()	16	static
+encoder.cpp:53:6:void encoder::RestartRotation()	16	static
+encoder.cpp:57:6:void encoder::RotationCont(int)	16	static
+encoder.cpp:66:10:uint32_t encoder::GetRotation()	16	static

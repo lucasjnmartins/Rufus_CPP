@@ -34,7 +34,7 @@ int encoder::GetRps() {
 
 void encoder::SetRps() {
 	time = cont;
-	if(time < 200) {
+	if(time < 600) {
 		rps = 1 / (0.00015*time);
 	} else {
 		rps = 0;
@@ -43,9 +43,26 @@ void encoder::SetRps() {
 }
 
 void encoder::Cont() {
-	if(cont < 200) {
+	if(cont < 600) {
 		cont++;
 	} else {
 		SetRps();
 	}
+}
+
+void encoder::RestartRotation() {
+	rotation = 0;
+}
+
+void encoder::RotationCont(int speed) {
+	if (speed >= 0) {
+		rotation++;
+	} else {
+		rotation--;
+	}
+
+}
+
+uint32_t encoder::GetRotation() {
+	return rotation;
 }

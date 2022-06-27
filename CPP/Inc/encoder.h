@@ -17,13 +17,17 @@ public:
 	int GetRps();
 	void Cont();
 	void SetRps();
+	void RestartRotation();
+	void RotationCont(int);
+	uint32_t GetRotation();
 	uint16_t GetPin();
 	GPIO_PinState State();
 
 private:
-	int rps, time;
+	int rps, time, rotations;
 	int cont;
 	uint16_t pin;
+	uint32_t rotation;
 	GPIO_TypeDef* port;
 
 };

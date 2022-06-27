@@ -60,7 +60,7 @@ void Error_Handler(void);
 void CppMain();
 void ADC_Interrupt(uint8_t*, int);
 void TIM1_Interrupt();
-#define TRACKS 20
+#define TRACKS 24
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
@@ -74,6 +74,7 @@ void TIM1_Interrupt();
 #define BIN2_GPIO_Port GPIOF
 #define MARC_DIR_Pin GPIO_PIN_1
 #define MARC_DIR_GPIO_Port GPIOF
+#define MARC_DIR_EXTI_IRQn EXTI0_1_IRQn
 #define L_FESQ_Pin GPIO_PIN_0
 #define L_FESQ_GPIO_Port GPIOB
 #define L_FREN_Pin GPIO_PIN_1

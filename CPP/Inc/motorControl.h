@@ -19,12 +19,16 @@ public:
 	void Break();
 	void Speed(int);
 	void InitConsts(float, float);
+	int GetSpeed();
+	uint32_t GetRotations();
+
 private:
 	motor* m;
 	encoder* e;
 	float kp, kd, pid;
 	int error, errorDer, olderror, sinal;
 	int der;
+
 };
 
 #endif /* INC_MOTORCONTROL_H_ */

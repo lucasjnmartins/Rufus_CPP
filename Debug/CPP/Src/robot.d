@@ -33,7 +33,8 @@ CPP/Src/robot.o: ../CPP/Src/robot.cpp \
  ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_tim_ex.h \
  C:/Users/Lucas\ Martins/STM32CubeIDE/workspace_1.7.0/Rufus_CPP/Rufus_CPP/CPP/Inc/motorControl.h \
  C:/Users/Lucas\ Martins/STM32CubeIDE/workspace_1.7.0/Rufus_CPP/Rufus_CPP/CPP/Inc/motor.h \
- C:/Users/Lucas\ Martins/STM32CubeIDE/workspace_1.7.0/Rufus_CPP/Rufus_CPP/CPP/Inc/encoder.h
+ C:/Users/Lucas\ Martins/STM32CubeIDE/workspace_1.7.0/Rufus_CPP/Rufus_CPP/CPP/Inc/encoder.h \
+ C:/Users/Lucas\ Martins/STM32CubeIDE/workspace_1.7.0/Rufus_CPP/Rufus_CPP/CPP/Inc/map.h
 
 C:/Users/Lucas\ Martins/STM32CubeIDE/workspace_1.7.0/Rufus_CPP/Rufus_CPP/CPP/Inc/robot.h:
 
@@ -106,3 +107,5 @@ C:/Users/Lucas\ Martins/STM32CubeIDE/workspace_1.7.0/Rufus_CPP/Rufus_CPP/CPP/Inc
 C:/Users/Lucas\ Martins/STM32CubeIDE/workspace_1.7.0/Rufus_CPP/Rufus_CPP/CPP/Inc/motor.h:
 
 C:/Users/Lucas\ Martins/STM32CubeIDE/workspace_1.7.0/Rufus_CPP/Rufus_CPP/CPP/Inc/encoder.h:
+
+C:/Users/Lucas\ Martins/STM32CubeIDE/workspace_1.7.0/Rufus_CPP/Rufus_CPP/CPP/Inc/map.h:

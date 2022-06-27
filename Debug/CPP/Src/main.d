@@ -40,6 +40,7 @@ CPP/Src/main.o: ../CPP/Src/main.cpp ../Core/Inc/main.h \
  C:/Users/Lucas\ Martins/STM32CubeIDE/workspace_1.7.0/Rufus_CPP/Rufus_CPP/CPP/Inc/robot.h \
  C:/Users/Lucas\ Martins/STM32CubeIDE/workspace_1.7.0/Rufus_CPP/Rufus_CPP/CPP/Inc/control.h \
  C:/Users/Lucas\ Martins/STM32CubeIDE/workspace_1.7.0/Rufus_CPP/Rufus_CPP/CPP/Inc/motorControl.h \
+ C:/Users/Lucas\ Martins/STM32CubeIDE/workspace_1.7.0/Rufus_CPP/Rufus_CPP/CPP/Inc/map.h \
  C:/Users/Lucas\ Martins/STM32CubeIDE/workspace_1.7.0/Rufus_CPP/Rufus_CPP/CPP/Inc/encoder.h \
  C:/Users/Lucas\ Martins/STM32CubeIDE/workspace_1.7.0/Rufus_CPP/Rufus_CPP/CPP/Inc/sensorSide.h
 
@@ -126,6 +127,8 @@ C:/Users/Lucas\ Martins/STM32CubeIDE/workspace_1.7.0/Rufus_CPP/Rufus_CPP/CPP/Inc
 C:/Users/Lucas\ Martins/STM32CubeIDE/workspace_1.7.0/Rufus_CPP/Rufus_CPP/CPP/Inc/control.h:
 
 C:/Users/Lucas\ Martins/STM32CubeIDE/workspace_1.7.0/Rufus_CPP/Rufus_CPP/CPP/Inc/motorControl.h:
+
+C:/Users/Lucas\ Martins/STM32CubeIDE/workspace_1.7.0/Rufus_CPP/Rufus_CPP/CPP/Inc/map.h:
 
 C:/Users/Lucas\ Martins/STM32CubeIDE/workspace_1.7.0/Rufus_CPP/Rufus_CPP/CPP/Inc/encoder.h:
 
