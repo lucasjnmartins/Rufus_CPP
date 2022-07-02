@@ -13,6 +13,7 @@ robot::robot(control* CTR, motorControl* MDIR, motorControl* MESQ, map* CIRCUIT)
 	mdir = MDIR;
 	mesq = MESQ;
 	circuit = CIRCUIT;
+	sum = 0;
 }
 
 robot::~robot() {
@@ -27,54 +28,48 @@ float robot::module(float val) {
 	}
 }
 
-void robot::RunningState(uint8_t state) {
-	if(state == 0) {
-		mdir->Break();
-		mesq->Break();
-	} if(state == 1) {
-		velMax = 150;
-		circuit->InitTracks();
-		/*mdir->InitConsts(1040.93, 21.714);
-		mesq->InitConsts(1040.93, 21.714);*/
-	} else if (state == 3) {
-
-		if(pos == TRACKS) {
-			pos = 0;
-		}
-
-		velDir = velBase + ctr->PIDValue();;
-		velEsq = velBase - ctr->PIDValue();;
-		if(velDir > velMax) {
-			velDir = velMax;
-		}
-		if(velEsq > velMax) {
-			velEsq = velMax;
-		}
-		mdir->Speed(velDir);
-		mesq->Speed(velEsq);
-
-
+void robot::Running() {
+	velDir = velBase + ctr->PIDValue();
+	velEsq = velBase - ctr->PIDValue();
+	if(velDir > velMax) {
+		velDir = velMax;
 	}
+	if(velEsq > velMax) {
+		velEsq = velMax;
+	}
+	mdir->Speed(velDir);
+	mesq->Speed(velEsq);
+}
+
+void robot::Finish(uint32_t* z) {
+	*z = 0;
+	while(*z < 1000) {
+		mdir->Speed(70);
+		mesq->Speed(70);
+	}
+	*z = 60000;
+	mdir->Break();
+	mesq->Break();
 }
 
 void robot::Calibrate(uint32_t* z) {
 	ctr->p->InitCalibration();
 	*z = 0;
-	while(*z < 5000) {
+	while(*z < 3000) {
 		mdir->Speed(75);
 		mesq->Speed(0);
 		ctr->p->CalibrateSensors();
 	}
 	mdir->Break();
 	mesq->Break();
-	while(*z < 13000) {
+	while(*z < 8000) {
 		mdir->Speed(-75);
 		mesq->Speed(0);
 		ctr->p->CalibrateSensors();
 	}
 	mdir->Break();
 	mesq->Break();
-	while(*z < 18000) {
+	while(*z < 12000) {
 		mdir->Speed(75);
 		mesq->Speed(0);
 		ctr->p->CalibrateSensors();
@@ -87,20 +82,47 @@ void robot::Calibrate(uint32_t* z) {
 }
 
 int robot::GetPosition() {
-	return ctr->GetPosition();
+	return pos;
 }
 
 void robot::NextState() {
-	ChangeTrack();
 	pos++;
+	ChangeTrack();
 }
 
 void robot::ChangeTrack() {
 	if(pos != 0) {
-		circuit->SetTrackRotations(pos-1, mdir->GetRotations(), mesq->GetRotations());
+		circuit->SetTrackRotations((pos-1), mdir->GetRotations(), mesq->GetRotations());
 	}
-	velBase = circuit->GetBaseSpeed(pos);
-	ctr->setKP(circuit->GetKp(pos));
-	ctr->setKD(circuit->GetKd(pos));
+	//velMax = 150;
+	velBase = 60 + sum;
+	velMax = 150;
+	ctr->setKP(87);
+	ctr->setKD(29);
+	//velBase = circuit->GetBaseSpeed(pos);
+	//ctr->setKP(circuit->GetKp(pos));
+	//ctr->setKD(circuit->GetKd(pos));
+}
 
+void robot::CompareRotations(){
+	if((mdir->GetRotations() > (circuit->GetWaitChangeInit(pos)*circuit->GetRotationsDir(pos))) || (mesq->GetRotations() > circuit->GetWaitChangeInit(pos)*circuit->GetRotationsEsq(pos))) {
+		velBase = circuit->GetHighSpeed(pos) + sum;
+	}
+
+	//if((mdir->GetRotations() > ((circuit->GetWaitChangeFinish(pos)  / 10)*circuit->GetRotationsDir(pos))) || (mesq->GetRotations() > ((circuit->GetWaitChangeFinish(pos)  / 10)*circuit->GetRotationsEsq(pos)))) {
+	if((mdir->GetRotations() > (circuit->GetWaitChangeFinish(pos)*circuit->GetRotationsDir(pos))) || (mesq->GetRotations() > circuit->GetWaitChangeFinish(pos)*circuit->GetRotationsEsq(pos))) {
+		velBase = circuit->GetBaseSpeed(pos) + sum;
+	}
+
+	if (mdir->GetRotations() > 3*circuit->GetRotationsDir(pos) || mesq->GetRotations() > 3*circuit->GetRotationsEsq(pos)) {
+		pos++;
+	}
+}
+
+void robot::sumPlus() {
+	sum++;
+}
+
+void robot::sumLess() {
+	sum--;
 }

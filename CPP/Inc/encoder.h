@@ -27,7 +27,7 @@ private:
 	int rps, time, rotations;
 	int cont;
 	uint16_t pin;
-	uint32_t rotation;
+	uint16_t rotation;
 	GPIO_TypeDef* port;
 
 };

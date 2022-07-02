@@ -18,15 +18,16 @@ public:
 	virtual ~motorControl();
 	void Break();
 	void Speed(int);
-	void InitConsts(float, float);
+	//void InitConsts(float, float);
 	int GetSpeed();
-	uint32_t GetRotations();
+	uint16_t GetRotations();
 
 private:
 	motor* m;
 	encoder* e;
-	float kp, kd, pid;
-	int error, errorDer, olderror, sinal;
+	//float kp, kd, pid;
+	//int error, errorDer, olderror;
+	int sinal;
 	int der;
 
 };

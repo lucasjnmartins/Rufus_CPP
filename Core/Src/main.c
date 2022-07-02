@@ -479,7 +479,7 @@ static void MX_GPIO_Init(void)
 
   /*Configure GPIO pin : MARC_DIR_Pin */
   GPIO_InitStruct.Pin = MARC_DIR_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING_FALLING;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(MARC_DIR_GPIO_Port, &GPIO_InitStruct);
 
@@ -490,8 +490,14 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : MARC_ESQ_Pin BUTTON_Pin ENC2_Pin */
-  GPIO_InitStruct.Pin = MARC_ESQ_Pin|BUTTON_Pin|ENC2_Pin;
+  /*Configure GPIO pin : MARC_ESQ_Pin */
+  GPIO_InitStruct.Pin = MARC_ESQ_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING_FALLING;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(MARC_ESQ_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : BUTTON_Pin ENC2_Pin */
+  GPIO_InitStruct.Pin = BUTTON_Pin|ENC2_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);

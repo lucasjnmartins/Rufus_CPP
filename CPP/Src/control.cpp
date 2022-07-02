@@ -20,11 +20,11 @@ control::~control() {
 }
 
 void control::setKP(float KP) {
-	kp = KP;
+	kp = KP / 10;
 }
 
 void control::setKD(float KD) {
-	kd = KD;
+	kd = KD / 10;
 }
 
 float control::PIDValue() {

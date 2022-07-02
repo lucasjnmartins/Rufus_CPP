@@ -22,7 +22,8 @@ enum {
 	WAITING,
 	CALIBRATION,
 	PRE_RUN,
-	RUNNING
+	RUNNING,
+	FINISH
 };
 
 position p;
@@ -50,63 +51,57 @@ motor m2(&htim16, 1, BIN2_GPIO_Port, BIN2_Pin, BIN1_GPIO_Port, BIN1_Pin);
 motorControl mdir(&m1, &enc1);
 motorControl mesq(&m2, &enc2);
 
-control controle(&p);
+control ctr(&p);
 map circuit;
 
-robot rufus(&controle, &mdir, &mesq, &circuit);
-float pidValue, vel1, vel2;
+robot rufus(&ctr, &mdir, &mesq, &circuit);
 
 
 void CppMain() {
 	lfdir.Off();
 	lfesq.Off();
 	lfren.Off();
+	ldeb1.Off();
+	ldeb2.Off();
 
 	while(1) {
 		//dirteste = HAL_GPIO_ReadPin(MARC_DIR_GPIO_Port, MARC_DIR_Pin);
-		rufus.RunningState(state);
-		if (state == WAITING){
-			lfdir.Off();
-			lfesq.Off();
-			lfren.Off();
-		} else if (state == CALIBRATION) {
-			rufus.Calibrate(&z);
-			lfdir.On();
-			lfesq.On();
-			lfren.On();
-			state = PRE_RUN;
-		} else if (state == RUNNING) {
-			pos = p.DefinePosition();
-			if((pos < -3) && (pos >= -5)) {
-				lfdir.On();
-				lfesq.Off();
-				lfren.Off();
-			} else if((pos < 0) && (pos > -3)) {
-				lfdir.On();
-				lfesq.Off();
-				lfren.On();
-			} else if(pos == 0) {
-				lfdir.Off();
-				lfesq.Off();
-				lfren.On();
-			} else if((pos > 0) && (pos < 3)) {
-				lfdir.Off();
-				lfesq.On();
-				lfren.On();
-			} else if((pos > 3) && (pos <= 5)) {
-				lfdir.Off();
-				lfesq.On();
-				lfren.Off();
-			}
-		}
+		switch(state) {
+		case WAITING:
+			mdir.Break();
+			mesq.Break();
+			break;
 
+		case CALIBRATION:
+			rufus.Calibrate(&z);
+			circuit.InitTracks();
+			state = PRE_RUN;
+			break;
+
+		case PRE_RUN:
+			mdir.Break();
+			mesq.Break();
+			break;
+
+		case RUNNING:
+			rufus.Running();
+			break;
+
+		case FINISH:
+			rufus.Finish(&z);
+			state = WAITING;
+			break;
+
+		default:
+			break;
+		}
 	}
 }
 
 
 void ADC_Interrupt(uint8_t* Array, int size) {
 	p.SetAnalog(Array, size);
-	pidValue = controle.PIDValue();
+	ctr.PIDValue();
 }
 
 
@@ -132,6 +127,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
 		if((state == RUNNING) || (state == CALIBRATION)) {
 			enc1.SetRps();
 			enc1.RotationCont(mdir.GetSpeed());
+			//rufus.CompareRotations();
 		}
 	}
 
@@ -139,6 +135,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
 		if((state == RUNNING) || (state == CALIBRATION)) {
 			enc2.SetRps();
 			enc2.RotationCont(mesq.GetSpeed());
+			//rufus.CompareRotations();
 		}
 	}
 
@@ -166,24 +163,53 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
 	}
 
 	if (GPIO_Pin == marcEsq.GetPin()) {
-		if(state == RUNNING) {
-			rufus.NextState();
-			marcEsq.NextTrack();
-			enc1.RestartRotation();
-			enc2.RestartRotation();
+		if(marcEsq.State() == GPIO_PIN_RESET) {
+			if(state == RUNNING) {
+				rufus.NextState();
+				marcEsq.NextTrack();
+				enc1.RestartRotation();
+				enc2.RestartRotation();
+			}
+
+			if(state == PRE_RUN) {
+				rufus.sumLess();
+			}
+
+			lfesq.On();
+		} else {
+			lfesq.Off();
 		}
+
 	}
 
 	if (GPIO_Pin == marcDir.GetPin()) {
-		if(state == RUNNING) {
-			marcDir.NextTrack();
-			if(marcDir.CurrentTrack() == 4) {
-				mdir.Break();
-				mesq.Break();
-				state = WAITING;
+		if(marcDir.State() == GPIO_PIN_RESET){
+			if(state == RUNNING) {
+				if(rufus.GetPosition() == 0) {
+					rufus.NextState();
+					enc1.RestartRotation();
+					enc2.RestartRotation();
+				}
+				marcDir.NextTrack();
+
+				if(marcDir.CurrentTrack() == 12) {
+					rufus.NextState();
+					mdir.Break();
+					mesq.Break();
+					state = FINISH;
+				}
 			}
+
+			if(state == PRE_RUN) {
+				rufus.sumPlus();
+			}
+
+			lfdir.On();
+		} else {
+			lfdir.Off();
 		}
 	}
 }
+
 
 

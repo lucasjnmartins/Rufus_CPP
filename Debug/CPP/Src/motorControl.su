@@ -1,8 +1,7 @@
 motorControl.cpp:10:1:motorControl::motorControl(motor*, encoder*)	24	static
 motorControl.cpp:16:1:motorControl::~motorControl()	16	static
 motorControl.cpp:16:1:virtual motorControl::~motorControl()	16	static
-motorControl.cpp:31:6:void motorControl::InitConsts(float, float)	24	static
 motorControl.cpp:36:6:void motorControl::Speed(int)	16	static
-motorControl.cpp:54:6:void motorControl::Break()	16	static
-motorControl.cpp:58:10:uint32_t motorControl::GetRotations()	16	static
-motorControl.cpp:62:5:int motorControl::GetSpeed()	16	static
+motorControl.cpp:55:6:void motorControl::Break()	16	static
+motorControl.cpp:59:10:uint16_t motorControl::GetRotations()	16	static
+motorControl.cpp:63:5:int motorControl::GetSpeed()	16	static

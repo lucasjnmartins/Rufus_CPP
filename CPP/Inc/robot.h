@@ -19,10 +19,14 @@ public:
 	virtual ~robot();
 	void NextState();
 	float module(float);
-	void RunningState(uint8_t);
+	void Running();
 	int GetPosition();
 	void Calibrate(uint32_t*);
 	void ChangeTrack();
+	void sumPlus();
+	void sumLess();
+	void CompareRotations();
+	void Finish(uint32_t*);
 
 private:
 	control* ctr;
@@ -31,10 +35,12 @@ private:
 	map* circuit;
 
 	uint8_t pos;
+	int sum;
 	float velDir;
 	float velEsq;
-	int velMax;
 	int velBase;
+	int velMax;
+	int relationDir, relationEsq;
 	int velDirNew;
 	int velEsqNew;
 

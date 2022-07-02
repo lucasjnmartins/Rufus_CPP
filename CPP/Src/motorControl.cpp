@@ -28,10 +28,10 @@ motorControl::~motorControl() {
 	m->PWM(speed);
 }*/
 
-void motorControl::InitConsts(float KP, float KD) {
+/*void motorControl::InitConsts(float KP, float KD) {
 	kp = KP;
 	kd = KD;
-}
+}*/
 
 void motorControl::Speed(int speed)  {
 	if(speed >= 0) {
@@ -49,16 +49,19 @@ void motorControl::Speed(int speed)  {
 	pid = kp*error + kd*errorDer;
 	sinal+=(pid);*/
 	m->PWM(sinal);
+	sinal = speed;
 }
 
 void motorControl::Break() {
 	m->MotorBreak();
 }
 
-uint32_t motorControl::GetRotations() {
+uint16_t motorControl::GetRotations() {
 	return e->GetRotation();
 }
 
 int motorControl::GetSpeed() {
 	return sinal;
 }
+
+

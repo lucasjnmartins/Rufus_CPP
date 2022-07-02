@@ -60,7 +60,7 @@ void Error_Handler(void);
 void CppMain();
 void ADC_Interrupt(uint8_t*, int);
 void TIM1_Interrupt();
-#define TRACKS 24
+#define TRACKS 84
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
