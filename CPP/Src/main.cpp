@@ -42,7 +42,7 @@ encoder enc2(ENC2_GPIO_Port, ENC2_Pin);
 
 int pos, k = 0, cont1, cont2, dirteste;
 uint32_t z = 0;
-uint16_t debounce = 0, state = 0;
+uint16_t debounce = 0, state = 0, dbEsq = 0, dbDir = 0;
 //test teste(&htim14);
 
 motor m1(&htim17, 1, AIN2_GPIO_Port, AIN2_Pin, AIN1_GPIO_Port, AIN1_Pin);
@@ -115,6 +115,12 @@ void TIM1_Interrupt() {
 	if(debounce > 0) {
 		debounce--;
 	}
+	if(dbDir > 0) {
+		dbDir--;
+	}
+	if(dbEsq > 0) {
+		dbEsq--;
+	}
 
 	if((state == RUNNING) || (state == CALIBRATION)) {
 		enc1.Cont();
@@ -177,6 +183,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
 
 			lfesq.On();
 		} else {
+
 			lfesq.Off();
 		}
 
@@ -203,7 +210,6 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
 			if(state == PRE_RUN) {
 				rufus.sumPlus();
 			}
-
 			lfdir.On();
 		} else {
 			lfdir.Off();

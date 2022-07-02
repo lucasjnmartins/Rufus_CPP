@@ -1,6 +1,6 @@
 control.cpp:10:1:control::control(position*)	16	static
 control.cpp:18:1:control::~control()	16	static
 control.cpp:18:1:virtual control::~control()	16	static
-control.cpp:22:6:void control::setConsts(float, float)	24	static
+control.cpp:22:6:void control::setConsts(uint8_t, uint8_t)	16	static
 control.cpp:28:7:float control::PIDValue()	24	static
 control.cpp:37:5:int control::GetPosition()	16	static

@@ -38,7 +38,7 @@ private:
 	int sum;
 	float velDir;
 	float velEsq;
-	int velBase;
+	volatile int velBase;
 	int velMax;
 	int relationDir, relationEsq;
 	int velDirNew;

@@ -19,7 +19,7 @@ public:
 	void SetRps();
 	void RestartRotation();
 	void RotationCont(int);
-	uint32_t GetRotation();
+	uint16_t GetRotation();
 	uint16_t GetPin();
 	GPIO_PinState State();
 

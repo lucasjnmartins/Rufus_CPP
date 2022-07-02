@@ -63,6 +63,6 @@ void encoder::RotationCont(int speed) {
 
 }
 
-uint32_t encoder::GetRotation() {
+uint16_t encoder::GetRotation() {
 	return rotation;
 }

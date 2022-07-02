@@ -19,9 +19,9 @@ control::~control() {
 	// TODO Auto-generated destructor stub
 }
 
-void control::setConsts(float KP, float KD) {
-	kp = KP / 10;
-	kd = KD / 10;
+void control::setConsts(uint8_t KP, uint8_t KD) {
+	kp = float(KP) / 10;
+	kd = float(KD) / 10;
 }
 
 
