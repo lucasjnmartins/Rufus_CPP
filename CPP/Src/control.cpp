@@ -19,13 +19,11 @@ control::~control() {
 	// TODO Auto-generated destructor stub
 }
 
-void control::setKP(float KP) {
+void control::setConsts(float KP, float KD) {
 	kp = KP / 10;
-}
-
-void control::setKD(float KD) {
 	kd = KD / 10;
 }
+
 
 float control::PIDValue() {
 	oldPos = pos;

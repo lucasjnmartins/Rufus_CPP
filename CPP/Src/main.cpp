@@ -127,7 +127,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
 		if((state == RUNNING) || (state == CALIBRATION)) {
 			enc1.SetRps();
 			enc1.RotationCont(mdir.GetSpeed());
-			//rufus.CompareRotations();
+			rufus.CompareRotations();
 		}
 	}
 
@@ -135,7 +135,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
 		if((state == RUNNING) || (state == CALIBRATION)) {
 			enc2.SetRps();
 			enc2.RotationCont(mesq.GetSpeed());
-			//rufus.CompareRotations();
+			rufus.CompareRotations();
 		}
 	}
 

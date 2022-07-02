@@ -33,8 +33,8 @@ private:
 	motorControl* mdir;
 	motorControl* mesq;
 	map* circuit;
-
 	uint8_t pos;
+
 	int sum;
 	float velDir;
 	float velEsq;

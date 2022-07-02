@@ -1,11 +1,12 @@
 map.cpp:10:1:map::map()	16	static
 map.cpp:14:1:map::~map()	16	static
 map.cpp:14:1:virtual map::~map()	16	static
-map.cpp:18:6:void map::InitTracks()	872	static
-map.cpp:168:7:float map::GetWaitChangeInit(uint8_t)	16	static
-map.cpp:172:7:float map::GetWaitChangeFinish(uint8_t)	16	static
-map.cpp:176:10:uint16_t map::GetRotationsDir(uint8_t)	16	static
-map.cpp:180:10:uint16_t map::GetRotationsEsq(uint8_t)	16	static
-map.cpp:184:9:uint8_t map::GetBaseSpeed(uint8_t)	16	static
-map.cpp:188:9:uint8_t map::GetHighSpeed(uint8_t)	16	static
-map.cpp:200:6:void map::SetTrackRotations(uint8_t, uint16_t, uint16_t)	32	static
+map.cpp:18:6:void map::InitTracks()	952	static
+map.cpp:171:7:float map::GetWaitChangeInit(uint8_t)	16	static
+map.cpp:175:7:float map::GetWaitChangeFinish(uint8_t)	16	static
+map.cpp:179:10:uint16_t map::GetRotationsDir(uint8_t)	16	static
+map.cpp:183:10:uint16_t map::GetRotationsEsq(uint8_t)	16	static
+map.cpp:191:9:uint8_t map::GetHighSpeed(uint8_t)	16	static
+map.cpp:195:7:float map::GetKp(uint8_t)	16	static
+map.cpp:199:7:float map::GetKd(uint8_t)	16	static
+map.cpp:203:6:void map::SetTrackRotations(uint8_t, uint16_t, uint16_t)	32	static

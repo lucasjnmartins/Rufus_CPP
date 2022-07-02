@@ -95,12 +95,12 @@ void robot::ChangeTrack() {
 		circuit->SetTrackRotations((pos-1), mdir->GetRotations(), mesq->GetRotations());
 	}
 	//velMax = 150;
-	velBase = 60 + sum;
+	//velBase = 60 + sum;
 	velMax = 150;
-	ctr->setKP(87);
-	ctr->setKD(29);
-	//velBase = circuit->GetBaseSpeed(pos);
-	//ctr->setKP(circuit->GetKp(pos));
+	velBase = circuit->baseSpeed + sum;
+	//ctr->setConsts(87, 29);
+	//velBase = circuit->GetBaseSpeed(pos) + sum;
+	ctr->setConsts(circuit->GetKp(pos), circuit->GetKd(pos));
 	//ctr->setKD(circuit->GetKd(pos));
 }
 
@@ -111,12 +111,12 @@ void robot::CompareRotations(){
 
 	//if((mdir->GetRotations() > ((circuit->GetWaitChangeFinish(pos)  / 10)*circuit->GetRotationsDir(pos))) || (mesq->GetRotations() > ((circuit->GetWaitChangeFinish(pos)  / 10)*circuit->GetRotationsEsq(pos)))) {
 	if((mdir->GetRotations() > (circuit->GetWaitChangeFinish(pos)*circuit->GetRotationsDir(pos))) || (mesq->GetRotations() > circuit->GetWaitChangeFinish(pos)*circuit->GetRotationsEsq(pos))) {
-		velBase = circuit->GetBaseSpeed(pos) + sum;
+		velBase = circuit->baseSpeed + sum;
 	}
 
-	if (mdir->GetRotations() > 3*circuit->GetRotationsDir(pos) || mesq->GetRotations() > 3*circuit->GetRotationsEsq(pos)) {
+	/*if (mdir->GetRotations() > 3*circuit->GetRotationsDir(pos) || mesq->GetRotations() > 3*circuit->GetRotationsEsq(pos)) {
 		pos++;
-	}
+	}*/
 }
 
 void robot::sumPlus() {

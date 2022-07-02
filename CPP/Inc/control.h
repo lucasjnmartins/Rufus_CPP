@@ -16,8 +16,7 @@ public:
 	control(position*);
 	position* p;
 	virtual ~control();
-	void setKP(float);
-	void setKD(float);
+	void setConsts(float, float);
 	float PIDValue();
 	int GetPosition();
 
