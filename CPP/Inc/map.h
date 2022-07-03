@@ -24,6 +24,7 @@ public:
 	void SetTrackRotations(uint8_t, uint16_t, uint16_t);
 	float GetWaitChangeInit(uint8_t);
 	float GetWaitChangeFinish(uint8_t);
+	uint16_t GetRotations(uint8_t);
 
 
 private:

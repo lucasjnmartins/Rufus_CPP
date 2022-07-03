@@ -116,9 +116,37 @@ void TIM1_Interrupt() {
 		debounce--;
 	}
 	if(dbDir > 0) {
+		if(state == RUNNING && dbDir == 1) {
+			if(rufus.GetPosition() == 0) {
+				rufus.NextState();
+				enc1.RestartRotation();
+				enc2.RestartRotation();
+			}
+			marcDir.NextTrack();
+
+			if(marcDir.CurrentTrack() == 12) {
+				rufus.NextState();
+				mdir.Break();
+				mesq.Break();
+				state = FINISH;
+			}
+		}
 		dbDir--;
 	}
+
 	if(dbEsq > 0) {
+		if(state == RUNNING && dbEsq == 1) {
+			rufus.NextState();
+			marcEsq.NextTrack();
+			enc1.RestartRotation();
+			enc2.RestartRotation();
+			if(marcEsq.CurrentTrack() == 82) {
+				rufus.NextState();
+				mdir.Break();
+				mesq.Break();
+				state = FINISH;
+			}
+		}
 		dbEsq--;
 	}
 
@@ -131,17 +159,17 @@ void TIM1_Interrupt() {
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
 	if (GPIO_Pin == enc1.GetPin()) {
 		if((state == RUNNING) || (state == CALIBRATION)) {
-			enc1.SetRps();
+			//enc1.SetRps();
 			enc1.RotationCont(mdir.GetSpeed());
-			rufus.CompareRotations();
+			//rufus.CompareRotations();
 		}
 	}
 
 	if (GPIO_Pin == enc2.GetPin()) {
 		if((state == RUNNING) || (state == CALIBRATION)) {
-			enc2.SetRps();
+			//enc2.SetRps();
 			enc2.RotationCont(mesq.GetSpeed());
-			rufus.CompareRotations();
+			//rufus.CompareRotations();
 		}
 	}
 
@@ -170,12 +198,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
 
 	if (GPIO_Pin == marcEsq.GetPin()) {
 		if(marcEsq.State() == GPIO_PIN_RESET) {
-			if(state == RUNNING) {
-				rufus.NextState();
-				marcEsq.NextTrack();
-				enc1.RestartRotation();
-				enc2.RestartRotation();
-			}
+			dbEsq = 30;
 
 			if(state == PRE_RUN) {
 				rufus.sumLess();
@@ -191,21 +214,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
 
 	if (GPIO_Pin == marcDir.GetPin()) {
 		if(marcDir.State() == GPIO_PIN_RESET){
-			if(state == RUNNING) {
-				if(rufus.GetPosition() == 0) {
-					rufus.NextState();
-					enc1.RestartRotation();
-					enc2.RestartRotation();
-				}
-				marcDir.NextTrack();
-
-				if(marcDir.CurrentTrack() == 12) {
-					rufus.NextState();
-					mdir.Break();
-					mesq.Break();
-					state = FINISH;
-				}
-			}
+			dbDir = 30;
 
 			if(state == PRE_RUN) {
 				rufus.sumPlus();

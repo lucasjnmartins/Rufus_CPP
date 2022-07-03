@@ -9,5 +9,5 @@ robot.cpp:84:5:int robot::GetPosition()	16	static
 robot.cpp:88:6:void robot::NextState()	16	static
 robot.cpp:93:6:void robot::ChangeTrack()	32	static
 robot.cpp:107:6:void robot::CompareRotations()	24	static
-robot.cpp:122:6:void robot::sumPlus()	16	static
-robot.cpp:126:6:void robot::sumLess()	16	static
+robot.cpp:130:6:void robot::sumPlus()	16	static
+robot.cpp:134:6:void robot::sumLess()	16	static
